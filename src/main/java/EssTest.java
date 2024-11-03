@@ -15,7 +15,7 @@ public class EssTest {
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "*********");
+        System.setProperty("webdriver.chrome.driver", "******");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -23,17 +23,17 @@ public class EssTest {
     @Test(priority = 1) // Test the functionality of requesting new annual leave
             public void testAnnualLeaveFunctionality() {
 
-        driver.get("*******");
+        driver.get("******");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         // Login as employee
         WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("div.login-field__input input[name='email']")));
-        emailInput.sendKeys("********");
+        emailInput.sendKeys("******");
 
         WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("div.login-field__input input[name='password']")));
-        passwordInput.sendKeys("*******");
+        passwordInput.sendKeys("******");
         driver.findElement(By.className("button-main__label")).click();
 
         // Request new annual leave
@@ -62,15 +62,15 @@ public class EssTest {
     }
     @Test(priority = 2)
     public void testAnnualLeaveApproval() {
-        driver.get("***********");
+        driver.get("******");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         //Login as Manger
         WebElement managerEmail = driver.findElement(By.cssSelector("div.login-field__input input[name='email']"));
-        managerEmail.sendKeys("************");
+        managerEmail.sendKeys("******");
 
         WebElement managerPassword = driver.findElement(By.cssSelector("div.login-field__input input[name='password']"));
-        managerPassword.sendKeys("*********");
+        managerPassword.sendKeys("******");
         driver.findElement(By.className("button-main__label")).click();
 
         // Open "Leaves" from dropdown menu
